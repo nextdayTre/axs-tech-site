@@ -80,8 +80,20 @@ function App() {
           </div>
         </div>
 
-        <figure className="signal-frame" aria-label="Subdued waveform and spectrogram signal">
-          <img src="/assets/spectral-hero.png" alt="Cyan waveform over green spectral analysis" />
+        <figure className="signal-frame" aria-label="Abstract clean audio neural network visualization">
+          <div className="cnn-animation">
+            {Array.from({ length: 144 }).map((_, i) => (
+              <div 
+                key={i} 
+                className="cnn-node" 
+                style={{ 
+                  animationDelay: `${(i % 12) * 0.2 + Math.random() * 0.5}s`, 
+                  animationDuration: `${3 + Math.random() * 2}s` 
+                }} 
+              />
+            ))}
+          </div>
+          <img src="/assets/approachable_audio_cnn.png" alt="Clean minimalist soundwave and neural grid" />
         </figure>
       </section>
 
